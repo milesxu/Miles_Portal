@@ -1,0 +1,97 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Header from '~/components/widgets/Header.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import { getPermalink } from '~/utils/permalinks';
+
+const metadata = {
+  title: 'Miles Xu',
+  ignoreTitleTemplate: true,
+  description: 'Miles Xu: software, systems, experiments and notes from a practical engineering journey.',
+};
+---
+
+<Layout metadata={metadata}>
+  <Fragment slot="announcement"></Fragment>
+  <Fragment slot="header">
+    <Header
+      links={[
+        { text: 'Home', href: getPermalink('/') },
+        { text: 'About me', href: getPermalink('/about') },
+        { text: 'Blog', href: 'https://blog.milesxu.com', target: '_blank' },
+        { text: 'GitHub', href: 'https://github.com/milesxu', target: '_blank' },
+      ]}
+      actions={[{ text: 'Explore projects', href: '#projects' }]}
+      isSticky
+      showToggleTheme
+    />
+  </Fragment>
+
+  <Hero tagline="Software · systems · experiments">
+    <Fragment slot="title">
+      Building useful things at the <span class="text-accent dark:text-white">boundary of code and ideas.</span>
+    </Fragment>
+    <Fragment slot="subtitle">
+      I am Miles Xu. This is the front door to my projects, experiments, writing and open-source work.
+    </Fragment>
+    <Fragment slot="actions">
+      <a class="btn-primary" href="#projects">Explore projects</a>
+      <a class="btn-secondary" href="https://blog.milesxu.com" target="_blank" rel="noreferrer">Read the blog</a>
+    </Fragment>
+  </Hero>
+
+  <Content id="about" title="About me" tagline="A short introduction" columns={2}>
+    <Fragment slot="content">
+      <p>
+        I work across systems software, GPU and scientific computing, developer tools, and AI-assisted engineering. I
+        enjoy turning difficult technical problems into experiments that can be explained, reproduced and shared.
+      </p>
+      <p class="mt-4">
+        This site is intentionally a small, fast and readable index. Detailed essays live on the blog; interactive
+        experiments will gradually appear in the apps collection.
+      </p>
+    </Fragment>
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-sky-50 dark:bg-slate-950"></div>
+    </Fragment>
+  </Content>
+
+  <Features3
+    id="projects"
+    tagline="Work in progress"
+    title="Projects and directions"
+    subtitle="A few areas I am building, studying or preparing to publish."
+    columns={3}
+    defaultIcon="tabler:arrow-up-right"
+    items={[
+      {
+        title: 'Lucent',
+        description: 'An open-source Rust project for a new generation of developer tooling.',
+        callToAction: { text: 'Coming soon', href: 'https://lucent.milesxu.com' },
+      },
+      {
+        title: 'Apps',
+        description: 'Small browser applications and Rust/WASM experiments, beginning with a matrix generator.',
+        callToAction: { text: 'App collection', href: 'https://app.milesxu.com' },
+      },
+      {
+        title: 'Writing',
+        description: 'Technical notes on performance, verification, GPU systems, Rust and agent engineering.',
+        callToAction: { text: 'Visit the blog', href: 'https://blog.milesxu.com' },
+      },
+    ]}
+  />
+
+  <CallToAction
+    tagline="Keep exploring"
+    title="The site is just getting started."
+    subtitle="The first public articles and applications will appear here as they become ready."
+    actions={[
+      { variant: 'primary', text: 'Read Miles Xu Blog', href: 'https://blog.milesxu.com', target: '_blank' },
+      { text: 'View GitHub', href: 'https://github.com/milesxu', target: '_blank' },
+    ]}
+  />
+</Layout>

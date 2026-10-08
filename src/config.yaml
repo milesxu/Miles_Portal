@@ -1,0 +1,36 @@
+site:
+  name: Miles Xu
+  site: https://milesxu.com
+  base: /
+  trailingSlash: false
+  googleSiteVerificationId: ''
+
+metadata:
+  title:
+    default: Miles Xu
+    template: '%s — Miles Xu'
+  description: 'Miles Xu: software, systems, experiments and notes from a practical engineering journey.'
+  robots:
+    index: true
+    follow: true
+  openGraph:
+    site_name: Miles Xu
+    type: website
+  twitter:
+    cardType: summary_large_image
+
+i18n:
+  language: en
+  textDirection: ltr
+
+apps:
+  blog:
+    isEnabled: false
+
+analytics:
+  vendors:
+    googleAnalytics:
+      id: null
+
+ui:
+  theme: dark

@@ -1,0 +1,69 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Header from '~/components/widgets/Header.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import { getPermalink } from '~/utils/permalinks';
+
+const metadata = {
+  title: 'About me',
+  description: 'About Miles Xu and the ideas behind this personal site.',
+};
+---
+
+<Layout metadata={metadata}>
+  <Fragment slot="header">
+    <Header
+      links={[
+        { text: 'Home', href: getPermalink('/') },
+        { text: 'About me', href: getPermalink('/about') },
+        { text: 'Blog', href: 'https://blog.milesxu.com', target: '_blank' },
+        { text: 'GitHub', href: 'https://github.com/milesxu', target: '_blank' },
+      ]}
+      actions={[{ text: 'Back home', href: getPermalink('/') }]}
+      isSticky
+      showToggleTheme
+    />
+  </Fragment>
+
+  <Hero tagline="About me">
+    <Fragment slot="title">
+      Curiosity first. <span class="text-accent dark:text-white">Evidence always.</span>
+    </Fragment>
+    <Fragment slot="subtitle">
+      I like projects that connect low-level implementation, measurable behavior and a clear explanation.
+    </Fragment>
+  </Hero>
+
+  <Content title="How I work" tagline="A practical loop" columns={2}>
+    <Fragment slot="content">
+      <p>
+        I start with a small reproducible experiment, make the constraints explicit, and keep the result useful to
+        someone who was not in the room. Failed experiments are part of the record, not something to hide.
+      </p>
+      <p class="mt-4">
+        My current interests include Rust tooling, GPU and scientific-computing systems, performance methodology, static
+        analysis, and reliable AI-assisted development.
+      </p>
+    </Fragment>
+  </Content>
+
+  <Features3
+    tagline="Current themes"
+    title="What you will find here"
+    columns={3}
+    defaultIcon="tabler:circle-check"
+    items={[
+      { title: 'Systems', description: 'Tools and runtimes where correctness, performance and observability meet.' },
+      {
+        title: 'Experiments',
+        description: 'Small, reproducible investigations with clear baselines and negative results.',
+      },
+      {
+        title: 'Writing',
+        description: 'Public explanations that turn hard-won implementation experience into reusable ideas.',
+      },
+    ]}
+  />
+</Layout>

@@ -22,3 +22,12 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+dist/
+.output/
+node_modules/
+.astro
+.env
+.env.production
+pnpm-lock.yaml
+pnpm-workspace.yaml

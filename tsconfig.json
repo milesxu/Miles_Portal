@@ -1,7 +1,26 @@
 {
-  "files": [],
-  "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
+  "extends": "astro/tsconfigs/strict",
+  "compilerOptions": {
+    "allowJs": true,
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["src/*"]
+    }
+  },
+  "include": [".astro/types.d.ts", "**/*"],
+  "exclude": [
+    "dist/",
+    ".astro/",
+    ".vitepress/",
+    "deno.json",
+    "deno.lock",
+    "tsconfig.app.json",
+    "tsconfig.node.json",
+    "src/App.vue",
+    "src/components/HelloWorld.vue",
+    "src/main.ts",
+    "src/style.css",
+    "src/vite-env.d.ts",
+    "vite.config.ts"
   ]
 }

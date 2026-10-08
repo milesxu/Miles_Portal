@@ -1,0 +1,17 @@
+dist
+node_modules
+.github
+.changeset
+
+# Legacy Vue/Vite files retained during the Astro migration.
+deno.json
+deno.lock
+index.html
+src/App.vue
+src/components/HelloWorld.vue
+src/main.ts
+src/style.css
+src/vite-env.d.ts
+tsconfig.app.json
+tsconfig.node.json
+vite.config.ts
