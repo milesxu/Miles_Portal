@@ -17,6 +17,16 @@ npm install
 npm run dev
 ```
 
+To run Portal and the sibling Miles Blog checkout together:
+
+```bash
+npm run dev:sites
+```
+
+This serves Portal at `http://localhost:4321` and Blog at
+`http://localhost:4322`; press `Ctrl-C` to stop both servers. If the Blog
+checkout is elsewhere, set `MILES_BLOG_DIR` before running the command.
+
 ## Checks
 
 ```bash

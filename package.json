@@ -9,6 +9,7 @@
   },
   "scripts": {
     "dev": "astro dev",
+    "dev:sites": "bash scripts/dev-sites.sh",
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
