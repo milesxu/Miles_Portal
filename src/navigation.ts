@@ -1,10 +1,11 @@
 import { getPermalink } from './utils/permalinks';
+import { getBlogSiteUrl } from './utils/site-links';
 
 export const headerData = {
   links: [
     { text: 'Home', href: getPermalink('/') },
     { text: 'About me', href: getPermalink('/about') },
-    { text: 'Blog', href: 'https://blog.milesxu.com', target: '_blank' },
+    { text: 'Blog', href: getBlogSiteUrl(), target: '_blank' },
     { text: 'GitHub', href: 'https://github.com/milesxu', target: '_blank' },
   ],
   actions: [{ text: 'Explore projects', href: '#projects' }],
@@ -16,7 +17,7 @@ export const footerData = {
       title: 'Explore',
       links: [
         { text: 'About me', href: getPermalink('/about') },
-        { text: 'Blog', href: 'https://blog.milesxu.com', target: '_blank' },
+        { text: 'Blog', href: getBlogSiteUrl(), target: '_blank' },
         { text: 'GitHub', href: 'https://github.com/milesxu', target: '_blank' },
       ],
     },
@@ -30,7 +31,7 @@ export const footerData = {
   ],
   secondaryLinks: [],
   socialLinks: [
-    { ariaLabel: 'RSS', icon: 'tabler:rss', href: 'https://blog.milesxu.com/rss.xml', target: '_blank' },
+    { ariaLabel: 'RSS', icon: 'tabler:rss', href: getBlogSiteUrl('rss.xml'), target: '_blank' },
     { ariaLabel: 'GitHub', icon: 'tabler:brand-github', href: 'https://github.com/milesxu', target: '_blank' },
   ],
   footNote: 'Miles Xu · Built with Astro and AstroWind',

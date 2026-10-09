@@ -5,6 +5,7 @@ import Hero from '~/components/widgets/Hero.astro';
 import Content from '~/components/widgets/Content.astro';
 import Features3 from '~/components/widgets/Features3.astro';
 import { getPermalink } from '~/utils/permalinks';
+import { getBlogSiteUrl } from '~/utils/site-links';
 
 const metadata = {
   title: 'About me',
@@ -18,7 +19,7 @@ const metadata = {
       links={[
         { text: 'Home', href: getPermalink('/') },
         { text: 'About me', href: getPermalink('/about') },
-        { text: 'Blog', href: 'https://blog.milesxu.com', target: '_blank' },
+        { text: 'Blog', href: getBlogSiteUrl(), target: '_blank' },
         { text: 'GitHub', href: 'https://github.com/milesxu', target: '_blank' },
       ]}
       actions={[{ text: 'Back home', href: getPermalink('/') }]}

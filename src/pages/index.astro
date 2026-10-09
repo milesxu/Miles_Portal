@@ -6,6 +6,7 @@ import Content from '~/components/widgets/Content.astro';
 import Features3 from '~/components/widgets/Features3.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import { getPermalink } from '~/utils/permalinks';
+import { getBlogSiteUrl } from '~/utils/site-links';
 
 const metadata = {
   title: 'Miles Xu',
@@ -21,7 +22,7 @@ const metadata = {
       links={[
         { text: 'Home', href: getPermalink('/') },
         { text: 'About me', href: getPermalink('/about') },
-        { text: 'Blog', href: 'https://blog.milesxu.com', target: '_blank' },
+        { text: 'Blog', href: getBlogSiteUrl(), target: '_blank' },
         { text: 'GitHub', href: 'https://github.com/milesxu', target: '_blank' },
       ]}
       actions={[{ text: 'Explore projects', href: '#projects' }]}
@@ -39,7 +40,7 @@ const metadata = {
     </Fragment>
     <Fragment slot="actions">
       <a class="btn-primary" href="#projects">Explore projects</a>
-      <a class="btn-secondary" href="https://blog.milesxu.com" target="_blank" rel="noreferrer">Read the blog</a>
+      <a class="btn-secondary" href={getBlogSiteUrl()} target="_blank" rel="noreferrer">Read the blog</a>
     </Fragment>
   </Hero>
 
@@ -80,7 +81,7 @@ const metadata = {
       {
         title: 'Writing',
         description: 'Technical notes on performance, verification, GPU systems, Rust and agent engineering.',
-        callToAction: { text: 'Visit the blog', href: 'https://blog.milesxu.com' },
+        callToAction: { text: 'Visit the blog', href: getBlogSiteUrl() },
       },
     ]}
   />
@@ -90,7 +91,7 @@ const metadata = {
     title="The site is just getting started."
     subtitle="The first public articles and applications will appear here as they become ready."
     actions={[
-      { variant: 'primary', text: 'Read Miles Xu Blog', href: 'https://blog.milesxu.com', target: '_blank' },
+      { variant: 'primary', text: 'Read Miles Xu Blog', href: getBlogSiteUrl(), target: '_blank' },
       { text: 'View GitHub', href: 'https://github.com/milesxu', target: '_blank' },
     ]}
   />
